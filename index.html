@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohit Kumar Thakur | Portfolio</title>
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%23FFD700" stroke="%23000" stroke-width="10"/><text x="50" y="65" font-family="Arial Black, Arial, sans-serif" font-size="35" font-weight="900" text-anchor="middle" fill="%23000">MKT</text></svg>'>
+  
+  <!-- Font: Comic Relief (Google Font / CDN replacement) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/comic-relief/index.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode"> <!-- Dark mode enabled by default as requested -->
+
+  <!-- ================= STICKY NAVBAR ================= -->
+  <nav class="navbar neo-border">
+    <div class="logo">MKT.</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="theme-toggle" class="brutalist-btn exp-btn" data-hover="Toggle Theme">💡</button>
+  </nav>
+
+  <!-- ================= HERO SECTION (DESIGN 1) ================= -->
+  <header id="home" class="view-section hero-section reveal-up">
+    <div class="hero-content">
+      <h1 class="massive-text">MOHIT KUMAR THAKUR</h1>
+      <h2 class="sub-headline">Full-Stack Developer  <span class="accent-highlight">✗</span>  Data Engineer  <span class="accent-highlight">✗</span>  AI/ML Enthusiast</h2>
+      <p class="hero-bio">
+        ECE undergrad at the University of Delhi. Building intelligent web applications, predictive models, and scaling scalable algorithms. Let's make something impactful.
+      </p>
+      <div class="cta-group">
+        <a href="#projects" class="brutalist-btn primary-btn">VIEW PROJECTS 🚀</a>
+        <a href="My_Resume_WCG.pdf" target="_blank" class="brutalist-btn secondary-btn">RESUME PDF</a>
+        
+        <div class="social-circles">
+          <a href="https://github.com/Mohit-Kumar-Thakur" target="_blank" class="brutalist-btn exp-btn" data-hover="GitHub">GH</a>
+          <a href="https://www.linkedin.com/in/mohitkumarthakur/" target="_blank" class="brutalist-btn exp-btn" data-hover="LinkedIn">IN</a>
+          <a href="https://leetcode.com/u/MohitKumarThakur/" target="_blank" class="brutalist-btn exp-btn" data-hover="LeetCode">LC</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= ABOUT SECTION (DESIGN 2: SPLIT LAYOUT) ================= -->
+  <section id="about" class="view-section split-layout">
+    <!-- Sticky Left Sidebar -->
+    <div class="sidebar-sticky reveal-up">
+      <h2 class="section-title">ABOUT <br> ME.</h2>
+      <div class="accent-block"></div>
+    </div>
+    
+    <!-- Scrolling Right Content -->
+    <div class="scrolling-content">
+      <div class="brutalist-card info-card reveal-left">
+        <h3>The Pitch</h3>
+        <p>
+          I am an Electronics and Communication Engineering student at the Faculty of Technology, University of Delhi, with a minor in <strong>AI & Machine Learning</strong>. I specialize in the MERN stack, robust data engineering pipelines, and data-driven Python applications. When I'm not building full-stack platforms or ETL architectures, you can find me grinding competitive programming on LeetCode or exploring Applied GenAI.
+        </p>
+      </div>
+
+      <div class="brutalist-card stats-card reveal-right">
+        <h3>Key Stats</h3>
+        <ul class="stats-list">
+          <li><strong>🎓 Education:</strong> B.Tech ECE (Minor AI/ML) @ Delhi University (2023–2027)</li>
+          <li><strong>🏆 GeeksforGeeks:</strong> Top 5 Institute Rank</li>
+          <li><strong>🧩 LeetCode:</strong> 1456 Contest Rating (Active Contributor)</li>
+          <li><strong>📜 Certs:</strong> TCS iON Master Data Management, GenAI Programming</li>
+        </ul>
+      </div>
+
+      <div class="brutalist-card skills-card reveal-up">
+        <h3>Technical Arsenal</h3>
+        <div class="tag-container">
+          <span class="capsule-tag bg-yellow">Python</span>
+          <span class="capsule-tag bg-yellow">C/C++</span>
+          <span class="capsule-tag bg-yellow">JavaScript</span>
+          <span class="capsule-tag bg-yellow">TypeScript</span>
+          <span class="capsule-tag bg-white">React.js</span>
+          <span class="capsule-tag bg-white">Express.js</span>
+          <span class="capsule-tag bg-white">Node.js</span>
+          <span class="capsule-tag bg-white">MongoDB</span>
+          <span class="capsule-tag bg-white">Tailwind CSS</span>
+          <span class="capsule-tag bg-accent">Neural Networks</span>
+          <span class="capsule-tag bg-accent">GenAI</span>
+          <span class="capsule-tag bg-accent">Scikit-Learn</span>
+          <span class="capsule-tag bg-white">FastAPI</span>
+          <span class="capsule-tag bg-white">PostgreSQL</span>
+          <span class="capsule-tag bg-white">Data Engineering</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS SECTION (DESIGN 3: ASYMMETRICAL & MARQUEE) ================= -->
+  <section id="projects" class="view-section projects-section">
+    <!-- Massive Scrolling Marquee -->
+    <div class="marquee-container neo-border">
+      <div class="marquee-content">
+        <span>PROJECTS ✗ EXPERIMENTATION ✗ MACHINE LEARNING ✗ FULL STACK ✗ </span>
+        <!-- Duplicate for continuous scroll effect -->
+        <span>PROJECTS ✗ EXPERIMENTATION ✗ MACHINE LEARNING ✗ FULL STACK ✗ </span>
+      </div>
+    </div>
+
+    <!-- Horizontal Auto-Scrolling Track -->
+    <div class="horizontal-scroll-wrapper reveal-up" id="scroll-wrapper">
+      <div class="horizontal-scroll-track" id="project-track">
+      
+      <!-- Card 1 -->
+      <div class="brutalist-card project-card split-project">
+        <div class="project-info">
+          <span class="project-number">01</span>
+          <h3>Weather Pipeline</h3>
+          <p class="subtitle">End-to-End ML Prediction System</p>
+          <div class="tag-container">
+            <span class="capsule-tag small">FastAPI</span>
+            <span class="capsule-tag small">PostgreSQL</span>
+            <span class="capsule-tag small">Scikit-Learn</span>
+          </div>
+          <p class="desc">A full production-grade pipeline continuously fetching API data, storing in PostgreSQL, and serving real-time 99.7% accurate temperature predictions via an engineered Linear Regression REST API.</p>
+          <a href="https://weather-prediction-pipeline.onrender.com/docs" target="_blank" class="brutalist-btn exp-btn" data-hover="View Project">↗</a>
+        </div>
+        <div class="project-visual pattern-bg-4"></div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="brutalist-card project-card split-project reverse">
+        <div class="project-info">
+          <span class="project-number">02</span>
+          <h3>devNest</h3>
+          <p class="subtitle">College Community Platform</p>
+          <div class="tag-container">
+            <span class="capsule-tag small">React.js</span>
+            <span class="capsule-tag small">Express.js</span>
+            <span class="capsule-tag small">MongoDB</span>
+          </div>
+          <p class="desc">A full-stack community hub enabling student collaboration, event management, and resource sharing. Features secure role-based access control and RESTful APIs optimized for daily campus traffic.</p>
+          <a href="https://github.com/Mohit-Kumar-Thakur/devNest" target="_blank" class="brutalist-btn exp-btn" data-hover="View Project">↗</a>
+        </div>
+        <div class="project-visual pattern-bg-1"></div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="brutalist-card project-card split-project">
+        <div class="project-info">
+          <span class="project-number">03</span>
+          <h3>MedieGenie</h3>
+          <p class="subtitle">AI-Powered Disease Prediction</p>
+          <div class="tag-container">
+            <span class="capsule-tag small">Python</span>
+            <span class="capsule-tag small">Machine Learning</span>
+            <span class="capsule-tag small">Neural Networks</span>
+          </div>
+          <p class="desc">An intelligent diagnostic tool trained on over 10,000 medical records. Uses neural networks to analyze symptoms for health assessments, wrapped in a real-time, user-friendly interface.</p>
+          <a href="https://github.com/Mohit-Kumar-Thakur/MediGenie" target="_blank" class="brutalist-btn exp-btn" data-hover="View Project">↗</a>
+        </div>
+        <div class="project-visual pattern-bg-2"></div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="brutalist-card project-card split-project reverse">
+        <div class="project-info">
+          <span class="project-number">04</span>
+          <h3>Movies Engine</h3>
+          <p class="subtitle">Content-Based Recommender</p>
+          <div class="tag-container">
+            <span class="capsule-tag small">Python</span>
+            <span class="capsule-tag small">Data Science</span>
+            <span class="capsule-tag small">Collaborative Filtering</span>
+          </div>
+          <p class="desc">A mathematical recommendation engine that processes a massive dataset of 50,000+ movies, executing similarity and ranking metrics to deliver precise user-tailored content.</p>
+          <a href="https://github.com/Mohit-Kumar-Thakur" target="_blank" class="brutalist-btn exp-btn" data-hover="View Project">↗</a>
+        </div>
+        <div class="project-visual pattern-bg-3"></div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="brutalist-card project-card split-project">
+        <div class="project-info">
+          <span class="project-number">05</span>
+          <h3>Interview Coach</h3>
+          <p class="subtitle">AI Mock Interview Copilot</p>
+          <div class="tag-container">
+            <span class="capsule-tag small">FastAPI</span>
+            <span class="capsule-tag small">Next.js</span>
+            <span class="capsule-tag small">LLM AI</span>
+          </div>
+          <p class="desc">An intelligent AI coach delivering interactive HR, Data Structures, and System Design interviews. Features real-time conversational chat and automated rubric-based candidate scoring.</p>
+          <a href="https://github.com/Mohit-Kumar-Thakur/interview-coach-copilot" target="_blank" class="brutalist-btn exp-btn" data-hover="View Project">↗</a>
+        </div>
+        <div class="project-visual pattern-bg-5"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= LATEST POST SECTION ================= -->
+  <section id="latest-post" class="view-section linkedin-section reveal-up">
+    <div class="linkedin-container">
+      <div class="li-header-text">
+        <h2 class="massive-text">LATEST UPDATE.</h2>
+        <p>Keeping the network updated on AI, Engineering, and Tech.</p>
+      </div>
+
+      <div class="brutalist-card" style="padding: 0; box-sizing: border-box; overflow: hidden; width: 100%; max-width: 100%; border: var(--border-width) solid var(--border-color); box-shadow: 10px 10px 0px 0px var(--shadow-color); background: white;">
+        <style>
+          /* Forcefully clamp the external Elfsight widget inside the Brutalist frame */
+          .elfsight-app-ec5db62c-685e-4307-bf6c-0608cd9e07ed {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            box-sizing: border-box !important;
+            overflow: hidden !important;
+            background: transparent !important;
+          }
+          /* Neutralize Elfsight's rounded corners and corporate drop shadows to brutalize the feed */
+          .elfsight-app-ec5db62c-685e-4307-bf6c-0608cd9e07ed * {
+             border-radius: 0 !important;
+             box-shadow: none !important;
+          }
+        </style>
+        <!-- Elfsight LinkedIn Feed | Untitled LinkedIn Feed -->
+        <script src="https://elfsightcdn.com/platform.js" async></script>
+        <div class="elfsight-app-ec5db62c-685e-4307-bf6c-0608cd9e07ed" data-elfsight-app-lazy></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT SECTION ================= -->
+  <section id="contact" class="view-section contact-section reveal-up">
+    <div class="contact-container neo-border">
+      <h2 class="massive-text">LET'S TALK.</h2>
+      <p>I'm always open to discussing open-source contributions, web development, or ML research.</p>
+      
+      <div class="contact-details">
+        <a href="mailto:mohitiit2005@gmail.com" class="brutalist-btn form-btn email-btn">✉ mohitiit2005@gmail.com</a>
+      </div>
+
+      <form id="contact-form" action="https://formsubmit.co/mohitiit2005@gmail.com" method="POST" class="brutalist-form">
+        <!-- Configuration elements for Formsubmit -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New Contact from Portfolio Website!">
+
+        <div class="input-group">
+          <input type="text" name="name" class="neo-input" placeholder="Your Name" required>
+        </div>
+        <div class="input-group">
+          <input type="email" name="email" class="neo-input" placeholder="Email Address" required>
+        </div>
+        <div class="input-group full-width">
+          <textarea name="message" class="neo-input" rows="4" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" id="submit-btn" class="brutalist-btn primary-btn submit-btn">SEND MESSAGE ➔</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer neo-border">
+    <p>© 2026 Mohit Kumar Thakur. Designed with 💛 and Brutalism.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,517 @@
+/* ================= CSS VARIABLES FOR LIGHT / DARK MODE ================= */
+:root {
+  /* Light Mode Palette */
+  --bg-color: #f9f9f9;
+  --text-color: #000000;
+  --accent-color: #ffe600; /* Vibrant Yellow */
+  --accent-secondary: #ff3366; /* Vibrant Pink */
+  --border-color: #000000;
+  --shadow-color: #000000;
+  --card-bg: #ffffff;
+  --nav-bg: #f9f9f9;
+  --pattern-color: rgba(0, 0, 0, 0.04);
+  
+  --border-width: 3px;
+  --shadow-offset: 6px;
+  --transition-speed: 0.3s;
+}
+
+body.dark-mode {
+  /* Dark Mode Palette */
+  --bg-color: #0a0a0a;
+  --text-color: #ffffff;
+  --border-color: #ffffff;
+  --shadow-color: #ffffff; /* Or yellow for extreme contrast */
+  --card-bg: #1a1a1a;
+  --nav-bg: #0a0a0a;
+  --pattern-color: rgba(255, 255, 255, 0.04);
+}
+
+/* ================= RESET & TYPOGRAPHY ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html { cursor: none; }
+a, button, .brutalist-card { cursor: none !important; }
+input, textarea { cursor: text !important; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Comic Relief', cursive, sans-serif;
+  background-color: var(--bg-color);
+  background-image: 
+    linear-gradient(to right, var(--pattern-color) 2px, transparent 2px),
+    linear-gradient(to bottom, var(--pattern-color) 2px, transparent 2px);
+  background-size: 60px 60px;
+  background-attachment: fixed;
+  color: var(--text-color);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ================= CUSTOM SCROLLBAR ================= */
+::-webkit-scrollbar {
+  width: 14px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+  border-left: var(--border-width) solid var(--border-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border: var(--border-width) solid var(--border-color);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-color);
+}
+
+/* Base Headings */
+h1, h2, h3 { font-weight: 700; text-transform: uppercase; }
+a { text-decoration: none; color: inherit; }
+
+/* Utility Classes */
+.neo-border { border: var(--border-width) solid var(--border-color); }
+.massive-text { font-size: clamp(3rem, 8vw, 6rem); line-height: 0.9; letter-spacing: -2px;}
+.sub-headline { font-size: clamp(1.2rem, 3vw, 2rem); margin-top: 1rem; }
+.accent-highlight { color: var(--accent-color); }
+
+/* ================= SCROLL REVEAL ANIMATIONS ================= */
+/* Initially hidden state */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, visibility;
+}
+/* Active triggered state for all reveals */
+.reveal-up.active, .reveal-left.active, .reveal-right.active {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
+}
+
+/* Horizontal slide animations */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, transform;
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, transform;
+}
+
+/* ================= COMPONENTS: BUTTONS & CARDS ================= */
+.brutalist-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: var(--card-bg);
+  border: var(--border-width) solid var(--border-color);
+  color: var(--text-color);
+  cursor: pointer;
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0px 0px var(--shadow-color);
+  transition: all var(--transition-speed) ease;
+}
+
+.brutalist-btn:hover {
+  transform: translate(var(--shadow-offset), var(--shadow-offset));
+  box-shadow: 0px 0px 0px 0px var(--shadow-color); /* Compress shadow */
+}
+
+.primary-btn {
+  background: var(--accent-color);
+  color: #000; /* Always black text on yellow for contrast */
+}
+
+/* Keeps primary button text black even in dark mode */
+body.dark-mode .primary-btn { color: #000; border-color: #fff; box-shadow: var(--shadow-offset) var(--shadow-offset) 0px 0px var(--shadow-color); }
+
+.circle-btn {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+}
+.large-circle { width: 80px; height: 80px; font-size: 2rem;}
+
+.exp-btn {
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: width 0.35s cubic-bezier(0.87, 0, 0.13, 1), 
+              color 0.2s ease, 
+              background-color 0.2s ease,
+              transform var(--transition-speed) ease, 
+              box-shadow var(--transition-speed) ease;
+}
+.exp-btn::after {
+  content: attr(data-hover);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  white-space: nowrap;
+  font-size: 1.05rem;
+  font-weight: 900;
+  transition: opacity 0.2s ease 0.15s;
+}
+.exp-btn:hover {
+  width: 190px;
+  color: transparent;
+  background-color: var(--accent-color);
+}
+.exp-btn:hover * { opacity: 0; }
+.exp-btn:hover::after {
+  opacity: 1;
+  color: #000; /* Contrast against the yellow pill */
+}
+
+.brutalist-card {
+  background: var(--card-bg);
+  border: var(--border-width) solid var(--border-color);
+  padding: 2rem;
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0px 0px var(--shadow-color);
+  transition: transform var(--transition-speed);
+}
+.brutalist-card:hover {
+  transform: translateY(-5px); /* Lift up effect on cards instead of shadow crush */
+}
+
+/* Tags */
+.capsule-tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  border: var(--border-width) solid var(--border-color);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0.25rem;
+}
+.bg-yellow { background: var(--accent-color); color: #000;}
+.bg-white { background: var(--card-bg); color: var(--text-color); }
+.bg-accent { background: var(--accent-secondary); color: #fff; border-color: var(--border-color); }
+
+/* ================= LAYOUT SECTIONS ================= */
+.view-section {
+  min-height: 100vh;
+  padding: 100px 5%;
+  position: relative;
+}
+
+/* 1. Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  background: var(--nav-bg);
+  z-index: 1000;
+  border-bottom: var(--border-width) solid var(--border-color);
+  border-top: none; border-left: none; border-right: none;
+}
+.logo { font-size: 2rem; font-weight: 700; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-weight: 600; text-transform: uppercase; font-size: 0.9rem;}
+.nav-links a:hover { color: var(--accent-color); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px;}
+
+/* 2. Hero Section */
+.hero-section {
+  display: flex;
+  align-items: center;
+  padding-top: 150px;
+}
+.hero-content {
+  max-width: 1000px;
+}
+.hero-bio {
+  font-size: 1.25rem;
+  margin: 2rem 0;
+  max-width: 700px;
+  font-weight: 400;
+}
+.cta-group {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.social-circles { display: flex; gap: 1rem; }
+
+/* 3. About (Split Layout) */
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  align-items: start;
+}
+.sidebar-sticky {
+  position: sticky;
+  top: 120px;
+}
+.section-title {
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 1;
+}
+.accent-block {
+  width: 100px;
+  height: 20px;
+  background: var(--accent-color);
+  border: var(--border-width) solid var(--border-color);
+  margin-top: 2rem;
+}
+.scrolling-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.stats-list { list-style: none; margin-top: 1rem; }
+.stats-list li { padding: 0.5rem 0; border-bottom: 2px dashed var(--border-color); }
+.tag-container { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+/* 4. Projects (Asymmetrical Grid & Marquee) */
+.projects-section {
+  padding: 0; /* Remove default padding for full width elements */
+}
+
+/* Marquee Animation Block */
+.marquee-container {
+  width: 100%;
+  background: var(--accent-color);
+  color: #000;
+  padding: 1.5rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  border-left: none; border-right: none;
+}
+.marquee-content {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+  font-size: 2rem;
+  font-weight: 700;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Horizontal Scroll Wrapper */
+.horizontal-scroll-wrapper {
+  padding: 100px 5%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+.horizontal-scroll-wrapper::-webkit-scrollbar { 
+  display: none; 
+}
+
+/* Horizontal Track */
+.horizontal-scroll-track {
+  display: flex;
+  gap: 6rem;
+  width: max-content; /* Ensure container matches total content width */
+}
+
+/* Split Project Cards - Horizontal Flow */
+.split-project {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  width: 90vw; /* Responsive width */
+  max-width: 900px;
+  min-height: 380px;
+  white-space: normal;
+}
+.split-project.reverse {
+  flex-direction: row-reverse;
+}
+.project-info {
+  flex: 1.2;
+  padding: 3rem;
+  border-right: var(--border-width) solid var(--border-color);
+  position: relative;
+}
+.split-project.reverse .project-info {
+  border-right: none;
+  border-left: var(--border-width) solid var(--border-color);
+}
+.project-visual {
+  flex: 0.8;
+  background-color: var(--bg-color);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Actual Imagery for Visuals */
+.pattern-bg-1 { background: var(--bg-color) url('devNest.png') center/contain no-repeat; }
+.pattern-bg-2 { background: var(--bg-color) url('medieGenie.png') center/contain no-repeat; }
+.pattern-bg-3 { background: var(--bg-color) url('moviesEngine.png') center/contain no-repeat; }
+.pattern-bg-4 { background: var(--bg-color) url('weather_pipeline.png') center/contain no-repeat; }
+.pattern-bg-5 { background: var(--bg-color) url('interview_coach.png') center/contain no-repeat; }
+
+
+.project-number {
+  font-size: 4rem;
+  font-weight: 700;
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  color: var(--border-color);
+  opacity: 0.2;
+}
+.project-info h3 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.project-info .subtitle { font-size: 1.2rem; margin-bottom: 1.5rem; font-style: italic; }
+.project-info .desc { margin-top: 1.5rem; }
+.project-info .exp-btn {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  background: var(--bg-color);
+  z-index: 10;
+}
+/* Adjust overlap button for reverse layout */
+.split-project.reverse .exp-btn {
+  right: auto;
+  left: -40px;
+}
+
+/* 4.5. LinkedIn Section */
+.linkedin-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.linkedin-container {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.li-header-text p { font-size: 1.2rem; opacity: 0.8; }
+
+/* 5. Contact Form */
+.contact-section {display: flex; justify-content: center; align-items: center;}
+.contact-container {
+  max-width: 900px;
+  width: 100%;
+  background: var(--card-bg);
+  padding: 2.5rem;
+  box-shadow: 10px 10px 0px 0px var(--shadow-color);
+  margin: 0 auto;
+}
+.contact-details { display: flex; gap: 1rem; margin: 1.5rem 0; flex-wrap: wrap;}
+.form-btn { flex: 1; justify-content: center; background: var(--bg-color); margin-bottom: 0;}
+
+.brutalist-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem;}
+.brutalist-form .full-width,
+.brutalist-form .submit-btn { grid-column: 1 / -1; }
+
+.neo-input {
+  width: 100%;
+  padding: 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  background: var(--bg-color);
+  color: var(--text-color);
+  border: var(--border-width) solid var(--border-color);
+  transition: all var(--transition-speed);
+}
+.neo-input:focus {
+  outline: none;
+  background: var(--card-bg);
+  box-shadow: 6px 6px 0px 0px var(--accent-color);
+}
+.submit-btn { width: 100%; }
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-bottom: none; border-left: none; border-right: none;
+  font-weight: 600;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+@media (max-width: 900px) {
+  .split-layout { grid-template-columns: 1fr; }
+  .sidebar-sticky { position: static; margin-bottom: 2rem;}
+  .split-project, .split-project.reverse { flex-direction: column; min-height: auto;}
+  .project-info { border-right: none; border-left: none; border-bottom: var(--border-width) solid var(--border-color); padding: 2rem;}
+  .project-visual { min-height: 250px; }
+  .project-info .exp-btn { bottom: -30px; right: 2rem; left: auto !important;}
+  .nav-links { display: none; /* Hide standard links on mobile, you could add a burger menu here */ }
+  .contact-container { padding: 2rem; box-shadow: 8px 8px 0px 0px var(--shadow-color); }
+  .brutalist-form { display: flex; flex-direction: column; }
+  .form-btn { flex: 100%; }
+}
+
+/* ================= CUSTOM CURSOR (DOT & RING) ================= */
+.cursor-dot {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 100000;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.cursor-outline {
+  position: fixed;
+  width: 45px;
+  height: 45px;
+  border: 2px solid var(--text-color);
+  background-color: transparent;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Elegant Hover effects */
+.cursor-outline.hovering {
+  width: 70px;
+  height: 70px;
+  background-color: var(--text-color);
+  border-color: var(--text-color);
+  mix-blend-mode: difference; /* Instantly inverts content below */
+}
+.cursor-dot.hovering {
+  transform: translate(-50%, -50%) scale(0.1);
+  opacity: 0;
+}
