@@ -7,7 +7,7 @@ A Neo-Brutalist portfolio for my work in agentic AI, ML pipelines, full-stack de
 ## What's Inside
 - **About:** background, count-up stats (CGPA, LeetCode rating, GfG institute rank, hackathon win), achievements and certifications.
 - **Technical Arsenal:** a bento grid of skills, grouped into Languages, Frameworks/Libraries, Developer Tools, Cloud/Databases, AI/ML & GenAI, and CS Fundamentals.
-- **Experience:** Research Intern at IIIT Delhi (Hybrid VLC/RF Vehicular & Aerial Networks), shown as a scroll-drawn timeline.
+- **Experience:** Research Intern at IIIT Delhi, Feb–Aug 2026 (Hybrid VLC/RF Vehicular & Aerial Networks), shown as a scroll-drawn timeline.
 - **Research Work:**
   - [Hierarchical Intent-Aware Routing for Hybrid VLC/RF VANET-FANET Networks](https://github.com/Mohit-Kumar-Thakur/hybrid-vlc-rf-vanet-fanet-routing)
   - [ML-Driven Utility-Based Hybrid VLC-RF Routing for Congestion-Aware UAV-Assisted VANETs](https://github.com/Mohit-Kumar-Thakur/ML-Driven-Utility-Based-Hybrid-VLC-RF-Routing-for-Congestion-Aware-UAV-Assisted-VANETs)
