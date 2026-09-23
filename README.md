@@ -7,7 +7,7 @@ A Neo-Brutalist portfolio for my work in agentic AI, ML pipelines, full-stack de
 ## What's Inside
 - **About:** background, count-up stats (CGPA, LeetCode rating, GfG institute rank, hackathon win), achievements and certifications.
 - **Technical Arsenal:** a bento grid of skills, grouped into Languages, Frameworks/Libraries, Developer Tools, Cloud/Databases, AI/ML & GenAI, and CS Fundamentals.
-- **Experience:** Research Intern at IIIT Delhi, Jun–Aug 2026 (Hybrid VLC/RF Vehicular & Aerial Networks), shown as a scroll-drawn timeline.
+- **Experience:** Research Intern at IIIT Delhi, Jun–Aug 2026 (Hybrid VLC/RF Vehicular & Aerial Networks), shown as a scroll-drawn timeline, with a link to the internship certificate (stipend blurred).
 - **Research Work:**
   - [Hierarchical Intent-Aware Routing for Hybrid VLC/RF VANET-FANET Networks](https://github.com/Mohit-Kumar-Thakur/hybrid-vlc-rf-vanet-fanet-routing)
   - [ML-Driven Utility-Based Hybrid VLC-RF Routing for Congestion-Aware UAV-Assisted VANETs](https://github.com/Mohit-Kumar-Thakur/ML-Driven-Utility-Based-Hybrid-VLC-RF-Routing-for-Congestion-Aware-UAV-Assisted-VANETs)
@@ -15,7 +15,7 @@ A Neo-Brutalist portfolio for my work in agentic AI, ML pipelines, full-stack de
   - [AI Research Agent](https://ai-research-agent-omega-ten.vercel.app): FastAPI, Celery/Redis, PostgreSQL, Groq LLM, React
   - [Weather Data Pipeline with ML Prediction](https://weather-prediction-pipeline.onrender.com): PostgreSQL, XGBoost, FastAPI (R² = 0.9975)
   - [DevNest](https://github.com/Mohit-Kumar-Thakur/devNest): React/TypeScript, Node.js, MongoDB, Socket.IO
-  - [MediGenie](https://github.com/Mohit-Kumar-Thakur/MediGenie): React, FastAPI, MongoDB, scikit-learn
+  - [MediGenie](https://medigenie-six.vercel.app) ([code](https://github.com/Mohit-Kumar-Thakur/MediGenie)): React, FastAPI, MongoDB, scikit-learn
   - [Interview Coach](https://github.com/Mohit-Kumar-Thakur/interview-coach-copilot) and Movies Engine
 - **Latest Update:** a live LinkedIn feed (Elfsight), restyled to match the site.
 - **Contact:** a working contact form through [formsubmit.co](https://formsubmit.co), plus a copy-email button.
@@ -40,6 +40,7 @@ style.css                      # Theme tokens, components, responsive rules
 script.js                      # Interactions (theme, reveals, carousel, command palette, ...)
 *.png                          # Project preview images
 Mohit_Kumar_Thakur_Resume.pdf  # Resume linked from the site
+IIITD_Internship_Certificate.pdf  # Internship certificate (stipend blurred)
 vercel.json / netlify.toml     # Hosting configuration
 ```
 

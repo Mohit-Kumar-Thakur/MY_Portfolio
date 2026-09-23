@@ -654,6 +654,30 @@ body.dark-mode .primary-btn { color: #000; border-color: #fff; box-shadow: var(-
 .bullet-list li::before { content: "✗"; position: absolute; left: 0; color: var(--accent-color); font-weight: 700; }
 .capsule-tag.small { padding: 0.3rem 0.8rem; font-size: 0.75rem; }
 
+/* Internship certificate link */
+.cert-link {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  border: var(--border-width) solid var(--border-color);
+  background: var(--bg-color);
+  box-shadow: 4px 4px 0 0 var(--accent-color);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+.cert-link:hover { transform: translate(4px, 4px); box-shadow: 0 0 0 0 var(--accent-color); }
+.cert-thumb {
+  width: 90px;
+  height: auto;
+  border: 2px solid var(--border-color);
+  background: #fff;
+  flex-shrink: 0;
+}
+.cert-text { display: flex; flex-direction: column; gap: 0.2rem; }
+.cert-label { font-weight: 700; text-transform: uppercase; font-size: 1.05rem; }
+.cert-sub { font-size: 0.85rem; opacity: 0.8; text-decoration: underline; text-decoration-color: var(--accent-color); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+
 /* Research section */
 .research-section { padding: 0; min-height: auto; }
 .research-section .marquee-content { animation-direction: reverse; }
