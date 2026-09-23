@@ -4,39 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mohit Kumar Thakur | Portfolio</title>
+  <meta name="description" content="Mohit Kumar Thakur: B.Tech ECE (Minor AI/ML) at University of Delhi, Research Intern at IIIT Delhi. AI/ML, agentic AI and full-stack projects.">
   <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%23FFD700" stroke="%23000" stroke-width="10"/><text x="50" y="65" font-family="Arial Black, Arial, sans-serif" font-size="35" font-weight="900" text-anchor="middle" fill="%23000">MKT</text></svg>'>
-  
+
   <!-- Font: Comic Relief (Google Font / CDN replacement) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/comic-relief/index.min.css">
-  
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-mode"> <!-- Dark mode enabled by default as requested -->
 
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
   <!-- ================= STICKY NAVBAR ================= -->
   <nav class="navbar neo-border">
     <div class="logo">MKT.</div>
-    <ul class="nav-links">
+    <ul class="nav-links" id="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#research">Research</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button id="theme-toggle" class="brutalist-btn exp-btn" data-hover="Toggle Theme">💡</button>
+    <div class="nav-actions">
+      <button id="cmdk-open" class="brutalist-btn kbd-btn" aria-label="Open command menu"><span class="kbd">⌘K</span></button>
+      <button id="theme-toggle" class="brutalist-btn exp-btn" data-hover="Toggle Theme" aria-label="Toggle theme">💡</button>
+      <button id="menu-toggle" class="brutalist-btn menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
   </nav>
 
   <!-- ================= HERO SECTION (DESIGN 1) ================= -->
   <header id="home" class="view-section hero-section reveal-up">
     <div class="hero-content">
+      <span class="status-pill neo-border"><span class="pulse-dot"></span> Research Intern @ IIIT Delhi</span>
       <h1 class="massive-text">MOHIT KUMAR THAKUR</h1>
-      <h2 class="sub-headline">Full-Stack Developer  <span class="accent-highlight">✗</span>  Data Engineer  <span class="accent-highlight">✗</span>  AI/ML Enthusiast</h2>
+      <h2 class="sub-headline">
+        <span class="rotator-prefix">I build</span>
+        <span class="rotator" id="role-rotator" data-roles='["Agentic AI systems","ML pipelines","Full-stack apps","Hybrid VLC/RF routing"]'>Agentic AI systems</span><span class="caret">_</span>
+      </h2>
       <p class="hero-bio">
-        ECE undergrad at the University of Delhi. Building intelligent web applications, predictive models, and scaling scalable algorithms. Let's make something impactful.
+        ECE undergrad (Minor: AI &amp; ML) at the University of Delhi, researching intent-aware routing for hybrid VLC/RF vehicular and aerial networks at IIIT Delhi. I build agentic AI tools, end-to-end ML pipelines, and full-stack products that ship.
       </p>
       <div class="cta-group">
-        <a href="#projects" class="brutalist-btn primary-btn">VIEW PROJECTS 🚀</a>
-        <a href="My_Resume_WCG.pdf" target="_blank" class="brutalist-btn secondary-btn">RESUME PDF</a>
-        
+        <a href="#projects" class="brutalist-btn primary-btn magnetic">VIEW PROJECTS 🚀</a>
+        <a href="Mohit_Kumar_Thakur_Resume.pdf" target="_blank" class="brutalist-btn secondary-btn magnetic">RESUME PDF</a>
+
         <div class="social-circles">
           <a href="https://github.com/Mohit-Kumar-Thakur" target="_blank" class="brutalist-btn exp-btn" data-hover="GitHub">GH</a>
           <a href="https://www.linkedin.com/in/mohitkumarthakur/" target="_blank" class="brutalist-btn exp-btn" data-hover="LinkedIn">IN</a>
@@ -50,49 +64,200 @@
   <section id="about" class="view-section split-layout">
     <!-- Sticky Left Sidebar -->
     <div class="sidebar-sticky reveal-up">
-      <h2 class="section-title">ABOUT <br> ME.</h2>
+      <h2 class="section-title scramble">ABOUT <br> ME.</h2>
       <div class="accent-block"></div>
     </div>
-    
+
     <!-- Scrolling Right Content -->
     <div class="scrolling-content">
       <div class="brutalist-card info-card reveal-left">
         <h3>The Pitch</h3>
         <p>
-          I am an Electronics and Communication Engineering student at the Faculty of Technology, University of Delhi, with a minor in <strong>AI & Machine Learning</strong>. I specialize in the MERN stack, robust data engineering pipelines, and data-driven Python applications. When I'm not building full-stack platforms or ETL architectures, you can find me grinding competitive programming on LeetCode or exploring Applied GenAI.
+          I am an Electronics and Communication Engineering student at the Faculty of Technology, University of Delhi, with a minor in <strong>AI &amp; Machine Learning</strong>. I work across <strong>agentic AI and RAG</strong>, end-to-end ML pipelines, and full-stack products. My research at IIIT Delhi applies machine learning to routing in hybrid VLC/RF vehicular and UAV networks. Outside of that I compete on LeetCode and GeeksforGeeks, and I'm currently exploring Quantum ML.
         </p>
       </div>
 
-      <div class="brutalist-card stats-card reveal-right">
-        <h3>Key Stats</h3>
-        <ul class="stats-list">
-          <li><strong>🎓 Education:</strong> B.Tech ECE (Minor AI/ML) @ Delhi University (2023–2027)</li>
-          <li><strong>🏆 GeeksforGeeks:</strong> Top 5 Institute Rank</li>
-          <li><strong>🧩 LeetCode:</strong> 1456 Contest Rating (Active Contributor)</li>
-          <li><strong>📜 Certs:</strong> TCS iON Master Data Management, GenAI Programming</li>
-        </ul>
-      </div>
-
-      <div class="brutalist-card skills-card reveal-up">
-        <h3>Technical Arsenal</h3>
-        <div class="tag-container">
-          <span class="capsule-tag bg-yellow">Python</span>
-          <span class="capsule-tag bg-yellow">C/C++</span>
-          <span class="capsule-tag bg-yellow">JavaScript</span>
-          <span class="capsule-tag bg-yellow">TypeScript</span>
-          <span class="capsule-tag bg-white">React.js</span>
-          <span class="capsule-tag bg-white">Express.js</span>
-          <span class="capsule-tag bg-white">Node.js</span>
-          <span class="capsule-tag bg-white">MongoDB</span>
-          <span class="capsule-tag bg-white">Tailwind CSS</span>
-          <span class="capsule-tag bg-accent">Neural Networks</span>
-          <span class="capsule-tag bg-accent">GenAI</span>
-          <span class="capsule-tag bg-accent">Scikit-Learn</span>
-          <span class="capsule-tag bg-white">FastAPI</span>
-          <span class="capsule-tag bg-white">PostgreSQL</span>
-          <span class="capsule-tag bg-white">Data Engineering</span>
+      <!-- Count-up stat tiles -->
+      <div class="stat-grid reveal-right">
+        <div class="brutalist-card stat-tile">
+          <span class="stat-num" data-count="7.61" data-decimals="2">0</span>
+          <span class="stat-label">CGPA (Sem I–VI)</span>
+        </div>
+        <div class="brutalist-card stat-tile bg-yellow">
+          <span class="stat-num" data-count="1499">0</span>
+          <span class="stat-label">LeetCode Rating</span>
+        </div>
+        <div class="brutalist-card stat-tile">
+          <span class="stat-num" data-count="4" data-prefix="#">0</span>
+          <span class="stat-label">GfG Institute Rank</span>
+        </div>
+        <div class="brutalist-card stat-tile bg-accent">
+          <span class="stat-num" data-count="1" data-prefix="#">0</span>
+          <span class="stat-label">Astraaya 1.0 Hackathon</span>
         </div>
       </div>
+
+      <div class="brutalist-card stats-card reveal-left">
+        <h3>Key Stats</h3>
+        <ul class="stats-list">
+          <li><strong>🎓 Education:</strong> B.Tech ECE (Minor AI/ML) @ University of Delhi, FoT (2023–2027)</li>
+          <li><strong>🏆 Hackathon:</strong> 1st place, Astraaya 1.0, for ResQRoute (emergency-vehicle coordination platform)</li>
+          <li><strong>🧩 Competitive Programming:</strong> GeeksforGeeks Institute Rank 4th (FoT, DU) | LeetCode Contest Rating 1499</li>
+          <li><strong>📜 Certs:</strong> NPTEL Cloud Computing | Deloitte Forage (Data Analytics, Technology, Cyber Security) | TCS iON Master Data Management &amp; Soft Skills (100%)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS (BENTO GRID) ================= -->
+  <section id="skills" class="view-section skills-section">
+    <h2 class="section-title scramble reveal-up">TECHNICAL <br> ARSENAL.</h2>
+    <div class="bento-grid">
+      <div class="brutalist-card bento-item bento-wide bg-yellow reveal-up tilt">
+        <h3>AI/ML &amp; GenAI</h3>
+        <div class="tag-container">
+          <span class="capsule-tag bg-white">RAG</span>
+          <span class="capsule-tag bg-white">Agentic AI</span>
+          <span class="capsule-tag bg-white">NLP</span>
+          <span class="capsule-tag bg-white">Neural Networks</span>
+          <span class="capsule-tag bg-white">Reinforcement Learning</span>
+          <span class="capsule-tag bg-white">GenAI</span>
+          <span class="capsule-tag bg-white">Prompt Engineering</span>
+          <span class="capsule-tag bg-accent">Exploring: Quantum ML</span>
+        </div>
+      </div>
+      <div class="brutalist-card bento-item reveal-up tilt">
+        <h3>Languages</h3>
+        <div class="tag-container">
+          <span class="capsule-tag bg-yellow">Python</span>
+          <span class="capsule-tag bg-yellow">C</span>
+          <span class="capsule-tag bg-yellow">C++</span>
+        </div>
+      </div>
+      <div class="brutalist-card bento-item bento-tall reveal-up tilt">
+        <h3>Frameworks / Libraries</h3>
+        <div class="tag-container">
+          <span class="capsule-tag bg-white">FastAPI</span>
+          <span class="capsule-tag bg-white">React.js</span>
+          <span class="capsule-tag bg-white">PyTorch</span>
+          <span class="capsule-tag bg-white">scikit-learn</span>
+          <span class="capsule-tag bg-white">LangChain</span>
+          <span class="capsule-tag bg-white">LangGraph</span>
+          <span class="capsule-tag bg-white">Hugging Face</span>
+        </div>
+      </div>
+      <div class="brutalist-card bento-item bento-wide reveal-up tilt">
+        <h3>Developer Tools</h3>
+        <div class="tag-container">
+          <span class="capsule-tag bg-white">Git</span>
+          <span class="capsule-tag bg-white">GitHub</span>
+          <span class="capsule-tag bg-white">Claude Code</span>
+          <span class="capsule-tag bg-white">MATLAB</span>
+          <span class="capsule-tag bg-white">Jupyter Notebook</span>
+          <span class="capsule-tag bg-white">VS Code</span>
+          <span class="capsule-tag bg-white">Linux</span>
+        </div>
+      </div>
+      <div class="brutalist-card bento-item reveal-up tilt">
+        <h3>Cloud / Databases</h3>
+        <div class="tag-container">
+          <span class="capsule-tag bg-accent">PostgreSQL</span>
+          <span class="capsule-tag bg-accent">Redis</span>
+          <span class="capsule-tag bg-accent">Vercel</span>
+        </div>
+      </div>
+      <div class="brutalist-card bento-item bento-wide reveal-up tilt">
+        <h3>CS Fundamentals</h3>
+        <div class="tag-container">
+          <span class="capsule-tag bg-white">OOP</span>
+          <span class="capsule-tag bg-white">Operating Systems</span>
+          <span class="capsule-tag bg-white">Data Structures &amp; Algorithms</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE (TIMELINE) ================= -->
+  <section id="experience" class="view-section split-layout">
+    <div class="sidebar-sticky reveal-up">
+      <h2 class="section-title scramble">WORK <br> EXP.</h2>
+      <div class="accent-block"></div>
+    </div>
+
+    <div class="timeline" id="timeline">
+      <div class="timeline-line"><div class="timeline-fill" id="timeline-fill"></div></div>
+
+      <div class="timeline-item reveal-left">
+        <div class="timeline-node"></div>
+        <div class="brutalist-card spotlight">
+          <div class="timeline-meta">
+            <span class="capsule-tag small bg-yellow">Feb 2026 – Present</span>
+            <span class="capsule-tag small bg-white">New Delhi, India</span>
+          </div>
+          <h3>Research Intern</h3>
+          <p class="subtitle">Indian Institute of Information Technology (IIIT) Delhi · Hybrid VLC/RF Vehicular &amp; Aerial Networks</p>
+          <ul class="bullet-list">
+            <li>Working under <strong>Dr. Gurinder Singh</strong> and <strong>Dr. Bohara</strong>.</li>
+            <li>Extended a foundational Random Forest congestion-aware framework into a <strong>three-stage intent-aware pipeline</strong>: MLP intent classification, per-intent reliability gating, and AHP-weighted utility ranking.</li>
+            <li>Benchmarked against <strong>AODV/DSDV</strong> baselines across three congestion regimes.</li>
+            <li>Revising the manuscript per reviewer feedback, with an added ablation study for conference submission.</li>
+          </ul>
+          <div class="tag-container">
+            <span class="capsule-tag small">Python</span>
+            <span class="capsule-tag small">scikit-learn</span>
+            <span class="capsule-tag small">MATLAB</span>
+            <span class="capsule-tag small">AHP</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RESEARCH WORK ================= -->
+  <section id="research" class="view-section research-section">
+    <div class="marquee-container neo-border">
+      <div class="marquee-content">
+        <span>RESEARCH ✗ VLC/RF ✗ VANET ✗ FANET ✗ UAV ✗ ML ROUTING ✗ </span>
+        <span>RESEARCH ✗ VLC/RF ✗ VANET ✗ FANET ✗ UAV ✗ ML ROUTING ✗ </span>
+      </div>
+    </div>
+
+    <div class="research-grid">
+      <article class="brutalist-card research-card spotlight tilt reveal-up">
+        <span class="project-number">R1</span>
+        <span class="capsule-tag small bg-yellow">2026</span>
+        <h3>Hierarchical Intent-Aware Routing for Hybrid VLC/RF VANET-FANET Networks</h3>
+        <p class="desc">Designed a cascaded pipeline of MLP intent classification, per-intent reliability gating and AHP-weighted utility ranking (Saaty pairwise matrices, consistency ratio verified). Benchmarked against AODV/DSDV baselines across three congestion regimes, and open-sourced the full reproducibility package.</p>
+        <div class="pipeline">
+          <span class="pipe-step">MLP Intent</span><span class="pipe-arrow">➔</span>
+          <span class="pipe-step">Reliability Gate</span><span class="pipe-arrow">➔</span>
+          <span class="pipe-step">AHP Ranking</span>
+        </div>
+        <div class="tag-container">
+          <span class="capsule-tag small">Python</span>
+          <span class="capsule-tag small">scikit-learn</span>
+          <span class="capsule-tag small">MATLAB</span>
+          <span class="capsule-tag small">AHP</span>
+        </div>
+        <a href="https://github.com/Mohit-Kumar-Thakur/hybrid-vlc-rf-vanet-fanet-routing" target="_blank" class="brutalist-btn card-link">GITHUB ↗</a>
+      </article>
+
+      <article class="brutalist-card research-card spotlight tilt reveal-up">
+        <span class="project-number">R2</span>
+        <span class="capsule-tag small bg-yellow">2026</span>
+        <h3>ML-Driven Utility-Based Hybrid VLC-RF Routing for Congestion-Aware UAV-Assisted VANETs</h3>
+        <p class="desc">Trained a 350-tree Random Forest classifier on 7 cross-layer features over 20,000 samples, with a 6-criteria multi-objective utility function.</p>
+        <div class="metric-row">
+          <div class="metric"><span class="stat-num" data-count="62.3" data-decimals="1" data-suffix="%">0</span><span class="stat-label">Congestion-index reduction</span></div>
+          <div class="metric"><span class="stat-num" data-count="59.5" data-decimals="1" data-suffix="%">0</span><span class="stat-label">E2E delay reduction vs AODV</span></div>
+        </div>
+        <div class="tag-container">
+          <span class="capsule-tag small">Python</span>
+          <span class="capsule-tag small">MATLAB</span>
+          <span class="capsule-tag small">scikit-learn</span>
+        </div>
+        <a href="https://github.com/Mohit-Kumar-Thakur/ML-Driven-Utility-Based-Hybrid-VLC-RF-Routing-for-Congestion-Aware-UAV-Assisted-VANETs" target="_blank" class="brutalist-btn card-link">GITHUB ↗</a>
+      </article>
     </div>
   </section>
 
@@ -101,82 +266,100 @@
     <!-- Massive Scrolling Marquee -->
     <div class="marquee-container neo-border">
       <div class="marquee-content">
-        <span>PROJECTS ✗ EXPERIMENTATION ✗ MACHINE LEARNING ✗ FULL STACK ✗ </span>
+        <span>PROJECTS ✗ AGENTIC AI ✗ MACHINE LEARNING ✗ FULL STACK ✗ </span>
         <!-- Duplicate for continuous scroll effect -->
-        <span>PROJECTS ✗ EXPERIMENTATION ✗ MACHINE LEARNING ✗ FULL STACK ✗ </span>
+        <span>PROJECTS ✗ AGENTIC AI ✗ MACHINE LEARNING ✗ FULL STACK ✗ </span>
       </div>
     </div>
+
+    <p class="drag-hint">← DRAG OR SCROLL →</p>
 
     <!-- Horizontal Auto-Scrolling Track -->
     <div class="horizontal-scroll-wrapper reveal-up" id="scroll-wrapper">
       <div class="horizontal-scroll-track" id="project-track">
-      
+
       <!-- Card 1 -->
       <div class="brutalist-card project-card split-project">
         <div class="project-info">
           <span class="project-number">01</span>
-          <h3>Weather Pipeline</h3>
-          <p class="subtitle">End-to-End ML Prediction System</p>
+          <h3>AI Research Agent</h3>
+          <p class="subtitle">Full-Stack Sourced Research Assistant</p>
           <div class="tag-container">
             <span class="capsule-tag small">FastAPI</span>
+            <span class="capsule-tag small">Celery</span>
+            <span class="capsule-tag small">Redis</span>
             <span class="capsule-tag small">PostgreSQL</span>
-            <span class="capsule-tag small">Scikit-Learn</span>
+            <span class="capsule-tag small">Groq LLM</span>
+            <span class="capsule-tag small">React</span>
           </div>
-          <p class="desc">A full production-grade pipeline continuously fetching API data, storing in PostgreSQL, and serving real-time 99.7% accurate temperature predictions via an engineered Linear Regression REST API.</p>
-          <a href="https://weather-prediction-pipeline.onrender.com/docs" target="_blank" class="brutalist-btn exp-btn" data-hover="View Project">↗</a>
+          <p class="desc">FastAPI hands each query to a Celery/Redis worker, which searches the web and summarizes with a Groq LLM. Sourced reports come back to a React 18 dashboard behind JWT auth. Also prototyped standalone RAG and agent modules (ChromaDB, ReAct loop).</p>
+          <div class="project-links">
+            <a href="https://ai-research-agent-omega-ten.vercel.app" target="_blank" class="text-link">LIVE DEMO ↗</a>
+            <a href="https://github.com/Mohit-Kumar-Thakur/ai-research-agent" target="_blank" class="text-link">GITHUB ↗</a>
+          </div>
+          <a href="https://ai-research-agent-omega-ten.vercel.app" target="_blank" class="brutalist-btn exp-btn" data-hover="Live Demo">↗</a>
         </div>
-        <div class="project-visual pattern-bg-4"></div>
+        <div class="project-visual pattern-bg-6"></div>
       </div>
 
       <!-- Card 2 -->
       <div class="brutalist-card project-card split-project reverse">
         <div class="project-info">
           <span class="project-number">02</span>
-          <h3>devNest</h3>
-          <p class="subtitle">College Community Platform</p>
+          <h3>Weather Pipeline</h3>
+          <p class="subtitle">End-to-End Data Pipeline with ML Prediction</p>
           <div class="tag-container">
-            <span class="capsule-tag small">React.js</span>
-            <span class="capsule-tag small">Express.js</span>
-            <span class="capsule-tag small">MongoDB</span>
+            <span class="capsule-tag small">Python</span>
+            <span class="capsule-tag small">PostgreSQL</span>
+            <span class="capsule-tag small">SQLAlchemy</span>
+            <span class="capsule-tag small">XGBoost</span>
+            <span class="capsule-tag small">FastAPI</span>
           </div>
-          <p class="desc">A full-stack community hub enabling student collaboration, event management, and resource sharing. Features secure role-based access control and RESTful APIs optimized for daily campus traffic.</p>
-          <a href="https://github.com/Mohit-Kumar-Thakur/devNest" target="_blank" class="brutalist-btn exp-btn" data-hover="View Project">↗</a>
+          <p class="desc">Ingests Open-Meteo data into PostgreSQL (8,900+ records) with 18 engineered features. Compared Linear Regression, Random Forest and XGBoost; the best model reached R² = 0.9975 and is served through a FastAPI REST API deployed live on Render.</p>
+          <div class="project-links">
+            <a href="https://weather-prediction-pipeline.onrender.com" target="_blank" class="text-link">LIVE DEMO ↗</a>
+            <a href="https://github.com/Mohit-Kumar-Thakur/weather-prediction-pipeline" target="_blank" class="text-link">GITHUB ↗</a>
+          </div>
+          <a href="https://weather-prediction-pipeline.onrender.com/docs" target="_blank" class="brutalist-btn exp-btn" data-hover="View Project">↗</a>
         </div>
-        <div class="project-visual pattern-bg-1"></div>
+        <div class="project-visual pattern-bg-4"></div>
       </div>
 
       <!-- Card 3 -->
       <div class="brutalist-card project-card split-project">
         <div class="project-info">
           <span class="project-number">03</span>
-          <h3>MedieGenie</h3>
-          <p class="subtitle">AI-Powered Disease Prediction</p>
+          <h3>DevNest</h3>
+          <p class="subtitle">Campus Communication &amp; Opportunity Platform</p>
           <div class="tag-container">
-            <span class="capsule-tag small">Python</span>
-            <span class="capsule-tag small">Machine Learning</span>
-            <span class="capsule-tag small">Neural Networks</span>
+            <span class="capsule-tag small">React</span>
+            <span class="capsule-tag small">TypeScript</span>
+            <span class="capsule-tag small">Node.js</span>
+            <span class="capsule-tag small">MongoDB</span>
+            <span class="capsule-tag small">Socket.IO</span>
           </div>
-          <p class="desc">An intelligent diagnostic tool trained on over 10,000 medical records. Uses neural networks to analyze symptoms for health assessments, wrapped in a real-time, user-friendly interface.</p>
-          <a href="https://github.com/Mohit-Kumar-Thakur/MediGenie" target="_blank" class="brutalist-btn exp-btn" data-hover="View Project">↗</a>
+          <p class="desc">Unifies auth, an opportunity dashboard, a learning module and a moderated community system. Includes JWT/Google OAuth, real-time Socket.IO updates, and a CRON-scheduled scraper that aggregates Unstop/Devpost listings.</p>
+          <a href="https://github.com/Mohit-Kumar-Thakur/devNest" target="_blank" class="brutalist-btn exp-btn" data-hover="View Project">↗</a>
         </div>
-        <div class="project-visual pattern-bg-2"></div>
+        <div class="project-visual pattern-bg-1"></div>
       </div>
 
       <!-- Card 4 -->
       <div class="brutalist-card project-card split-project reverse">
         <div class="project-info">
           <span class="project-number">04</span>
-          <h3>Movies Engine</h3>
-          <p class="subtitle">Content-Based Recommender</p>
+          <h3>MediGenie</h3>
+          <p class="subtitle">AI Health Companion for Disease Prediction</p>
           <div class="tag-container">
-            <span class="capsule-tag small">Python</span>
-            <span class="capsule-tag small">Data Science</span>
-            <span class="capsule-tag small">Collaborative Filtering</span>
+            <span class="capsule-tag small">React</span>
+            <span class="capsule-tag small">FastAPI</span>
+            <span class="capsule-tag small">MongoDB</span>
+            <span class="capsule-tag small">scikit-learn</span>
           </div>
-          <p class="desc">A mathematical recommendation engine that processes a massive dataset of 50,000+ movies, executing similarity and ranking metrics to deliver precise user-tailored content.</p>
-          <a href="https://github.com/Mohit-Kumar-Thakur" target="_blank" class="brutalist-btn exp-btn" data-hover="View Project">↗</a>
+          <p class="desc">A JWT-secured health companion that predicts disease risk across 8 disease datasets with a Random Forest classifier. SMOTE and GridSearchCV improved accuracy by about 15% over the baseline.</p>
+          <a href="https://github.com/Mohit-Kumar-Thakur/MediGenie" target="_blank" class="brutalist-btn exp-btn" data-hover="View Project">↗</a>
         </div>
-        <div class="project-visual pattern-bg-3"></div>
+        <div class="project-visual pattern-bg-2"></div>
       </div>
 
       <!-- Card 5 -->
@@ -190,12 +373,30 @@
             <span class="capsule-tag small">Next.js</span>
             <span class="capsule-tag small">LLM AI</span>
           </div>
-          <p class="desc">An intelligent AI coach delivering interactive HR, Data Structures, and System Design interviews. Features real-time conversational chat and automated rubric-based candidate scoring.</p>
+          <p class="desc">An AI coach that runs interactive HR, Data Structures and System Design interviews, with real-time conversational chat and automated rubric-based candidate scoring.</p>
           <a href="https://github.com/Mohit-Kumar-Thakur/interview-coach-copilot" target="_blank" class="brutalist-btn exp-btn" data-hover="View Project">↗</a>
         </div>
         <div class="project-visual pattern-bg-5"></div>
       </div>
 
+      <!-- Card 6 -->
+      <div class="brutalist-card project-card split-project reverse">
+        <div class="project-info">
+          <span class="project-number">06</span>
+          <h3>Movies Engine</h3>
+          <p class="subtitle">Content-Based Recommender</p>
+          <div class="tag-container">
+            <span class="capsule-tag small">Python</span>
+            <span class="capsule-tag small">Data Science</span>
+            <span class="capsule-tag small">Collaborative Filtering</span>
+          </div>
+          <p class="desc">A recommendation engine over a dataset of 50,000+ movies, using similarity and ranking metrics to deliver user-tailored suggestions.</p>
+          <a href="https://github.com/Mohit-Kumar-Thakur" target="_blank" class="brutalist-btn exp-btn" data-hover="View Project">↗</a>
+        </div>
+        <div class="project-visual pattern-bg-3"></div>
+      </div>
+
+      </div>
     </div>
   </section>
 
@@ -236,10 +437,11 @@
   <section id="contact" class="view-section contact-section reveal-up">
     <div class="contact-container neo-border">
       <h2 class="massive-text">LET'S TALK.</h2>
-      <p>I'm always open to discussing open-source contributions, web development, or ML research.</p>
-      
+      <p>I'm always open to discussing research collaborations, AI/ML engineering, internships, or open-source work.</p>
+
       <div class="contact-details">
         <a href="mailto:mohitiit2005@gmail.com" class="brutalist-btn form-btn email-btn">✉ mohitiit2005@gmail.com</a>
+        <button type="button" id="copy-email" class="brutalist-btn form-btn copy-btn" data-email="mohitiit2005@gmail.com">⧉ COPY EMAIL</button>
       </div>
 
       <form id="contact-form" action="https://formsubmit.co/mohitiit2005@gmail.com" method="POST" class="brutalist-form">
@@ -262,8 +464,28 @@
   </section>
 
   <footer class="footer neo-border">
-    <p>© 2026 Mohit Kumar Thakur. Designed with 💛 and Brutalism.</p>
+    <p>© 2026 Mohit Kumar Thakur. Designed with 💛 and Brutalism. <span class="footer-hint">Press <span class="kbd">Ctrl</span> + <span class="kbd">K</span> to navigate.</span></p>
   </footer>
+
+  <!-- ================= COMMAND PALETTE ================= -->
+  <div class="cmdk-overlay" id="cmdk" hidden>
+    <div class="cmdk-panel neo-border" role="dialog" aria-modal="true" aria-label="Command menu">
+      <input type="text" id="cmdk-input" class="neo-input" placeholder="Jump to… (type to filter)" autocomplete="off">
+      <ul class="cmdk-list" id="cmdk-list">
+        <li data-href="#home">🏠 Home</li>
+        <li data-href="#about">👤 About</li>
+        <li data-href="#skills">🧰 Skills</li>
+        <li data-href="#experience">💼 Experience</li>
+        <li data-href="#research">🔬 Research Work</li>
+        <li data-href="#projects">🚀 Projects</li>
+        <li data-href="#contact">✉ Contact</li>
+        <li data-action="theme">💡 Toggle Theme</li>
+        <li data-href="https://github.com/Mohit-Kumar-Thakur" data-external>↗ GitHub</li>
+        <li data-href="https://www.linkedin.com/in/mohitkumarthakur/" data-external>↗ LinkedIn</li>
+        <li data-href="Mohit_Kumar_Thakur_Resume.pdf" data-external>📄 Resume PDF</li>
+      </ul>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
