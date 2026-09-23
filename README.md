@@ -1,22 +1,57 @@
 # Mohit Kumar Thakur 🟨 Neo-Brutalist Portfolio
 
-A highly engineered, stunningly raw Neo-Brutalist frontend portfolio showcasing Data Engineering pipelines, MERN architecture, and AI integrations.
+**Live:** [my-portfolio-three-tan-43.vercel.app](https://my-portfolio-three-tan-43.vercel.app)
+
+A Neo-Brutalist portfolio for my work in agentic AI, ML pipelines, full-stack development, and research on ML-driven routing for hybrid VLC/RF vehicular and aerial networks.
+
+## What's Inside
+- **About:** background, count-up stats (CGPA, LeetCode rating, GfG institute rank, hackathon win), achievements and certifications.
+- **Technical Arsenal:** a bento grid of skills, grouped into Languages, Frameworks/Libraries, Developer Tools, Cloud/Databases, AI/ML & GenAI, and CS Fundamentals.
+- **Experience:** Research Intern at IIIT Delhi (Hybrid VLC/RF Vehicular & Aerial Networks), shown as a scroll-drawn timeline.
+- **Research Work:**
+  - [Hierarchical Intent-Aware Routing for Hybrid VLC/RF VANET-FANET Networks](https://github.com/Mohit-Kumar-Thakur/hybrid-vlc-rf-vanet-fanet-routing)
+  - [ML-Driven Utility-Based Hybrid VLC-RF Routing for Congestion-Aware UAV-Assisted VANETs](https://github.com/Mohit-Kumar-Thakur/ML-Driven-Utility-Based-Hybrid-VLC-RF-Routing-for-Congestion-Aware-UAV-Assisted-VANETs)
+- **Projects:**
+  - [AI Research Agent](https://ai-research-agent-omega-ten.vercel.app): FastAPI, Celery/Redis, PostgreSQL, Groq LLM, React
+  - [Weather Data Pipeline with ML Prediction](https://weather-prediction-pipeline.onrender.com): PostgreSQL, XGBoost, FastAPI (R² = 0.9975)
+  - [DevNest](https://github.com/Mohit-Kumar-Thakur/devNest): React/TypeScript, Node.js, MongoDB, Socket.IO
+  - [MediGenie](https://github.com/Mohit-Kumar-Thakur/MediGenie): React, FastAPI, MongoDB, scikit-learn
+  - [Interview Coach](https://github.com/Mohit-Kumar-Thakur/interview-coach-copilot) and Movies Engine
+- **Latest Update:** a live LinkedIn feed (Elfsight), restyled to match the site.
+- **Contact:** a working contact form through [formsubmit.co](https://formsubmit.co), plus a copy-email button.
 
 ## Architecture & Design
-This static website is built entirely on fundamental web technologies with zero bloat from heavy frameworks, achieving phenomenal lighthouse scores and instant load times. Built with raw **HTML5, CSS3, and JavaScript**.
+Plain **HTML5, CSS3 and vanilla JavaScript**, with no framework and no build step, so it loads fast.
 
-**Key Features:**
-- **Infinite Marquee Carousel:** A custom looping auto-scroll track implemented via the Web Animations API for displaying projects gracefully.
-- **Neo-Brutalist Aesthetic:** Strict high-contrast UI (Black, White, Yellow) with heavy 10px borders and rigid drop shadows to mimic retro-industrial brutalism.
-- **Live Tech Ecosystem:** Integrates directly with a live Elfsight-powered LinkedIn feed, stylized forcibly to match the aesthetic.
-- **Advanced Interactivity:** Featuring an inverted-color trailing dot-and-ring custom cursor bound seamlessly across dynamic scrolling nodes.
-- **Formsubmit.co Delivery:** Active and functional static contact form pipeline utilizing `formsubmit.co` without requiring a custom mail server.
+**Interactive features:**
+- **Neo-Brutalist look:** high-contrast black, white, yellow and pink, with thick borders, hard drop shadows, and light/dark themes.
+- **Command palette:** press `Ctrl + K` / `⌘ + K` to jump to any section, switch theme, or open links.
+- **Scroll effects:** a scroll-progress bar, the nav highlights the section you're on, content reveals as you scroll, and the timeline fills in.
+- **Motion:** typewriter role rotator, count-up stats, scramble-text headings, magnetic buttons, and 3D-tilt cards with a glow that follows the cursor.
+- **Infinite project carousel:** auto-scrolls in a loop, pauses on hover, and can be dragged.
+- **Custom cursor:** a trailing dot-and-ring cursor that inverts colors, on mouse devices only.
+- **Mobile friendly:** responsive layout with a hamburger menu.
+- **Accessible motion:** all animation turns off when the visitor has set `prefers-reduced-motion`.
 
-## Deployment Instructions
-Because this repository is purely static, you can deploy it instantly by drag-and-dropping the folder or linking the repository to any of the leading static edge platforms.
+## Project Structure
+```
+index.html                     # All sections and content
+style.css                      # Theme tokens, components, responsive rules
+script.js                      # Interactions (theme, reveals, carousel, command palette, ...)
+*.png                          # Project preview images
+Mohit_Kumar_Thakur_Resume.pdf  # Resume linked from the site
+vercel.json / netlify.toml     # Hosting configuration
+```
 
-1. **Vercel**: Configuration rules are provided in `vercel.json` (Caching Rules).
-2. **Netlify**: Configuration rules are provided in `netlify.toml`.
-3. **GitHub Pages**: It will auto-resolve `index.html` natively from the `main` branch.
+## Run Locally
+```bash
+python -m http.server 8000
+# open http://localhost:8000
+```
 
-All assets are perfectly compiled and inherently responsive right out of the box.
+## Deployment
+The site is fully static, so any static host works.
+
+1. **Vercel** (current host): `vercel deploy --prod`. Caching and clean-URL rules are in `vercel.json`.
+2. **Netlify**: configuration is in `netlify.toml`.
+3. **GitHub Pages**: serves `index.html` directly from the `main` branch.
